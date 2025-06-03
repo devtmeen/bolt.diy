@@ -94,6 +94,11 @@ export default defineConfig((config) => {
     build: {
       target: 'esnext',
     },
+    server: {
+      host: '0.0.0.0',
+      port: 5173,
+      allowedHosts: ['.railway.app'], // หรือใช้ ['.railway.app'] เพื่อครอบคลุมทุก subdomain
+    },
     plugins: [
       nodePolyfills({
         include: ['buffer', 'process', 'util', 'stream'],
